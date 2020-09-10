@@ -18,6 +18,22 @@ var person = {
 		name: 'Jonh and Jonh',
 		age: 23
 	}
+var listPerson = [
+	{
+		name: 'B & B',
+	 	age: 20
+	},	 
+	{
+		name: 'F & F',
+		 age: 40
+	}
+]
+function showAll(listPerson){
+	for(i=0;i<listPerson.length;i++){
+		showPerson(listPerson[i])
+	}
+}
+showAll(listPerson);
 function showPerson(p){
 	console.log(`Name : ${p.name} and Age: ${p.age}`)
 }

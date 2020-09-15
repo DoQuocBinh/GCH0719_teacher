@@ -7,7 +7,7 @@ var server = http.createServer(function (req, res) {   //create web server
         res.writeHead(200, { 'Content-Type': 'text/html' }); 
         
         // set response content    
-        res.write('<html><body><p style="color:red">This is home Page.</p></body></html>');
+        res.write('<html><body><p style="color:blue">This is home Page.</p></body></html>');
         res.end();
     
     }

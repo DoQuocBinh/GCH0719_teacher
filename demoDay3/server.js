@@ -5,9 +5,13 @@ var server = http.createServer(function (req, res) {   //create web server
         
         // set response header
         res.writeHead(200, { 'Content-Type': 'text/html' }); 
-        
+        let d = new Date();
+        let dates = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        let dayN = d.getDay();
+        let dayS = dates[dayN];
         // set response content    
-        res.write('<html><body><p style="color:blue">This is home Page.</p></body></html>');
+        res.write
+        (`<html><body><p style="color:blue">This is home Page123456.</p> ${dayS}</body></html>`);
         res.end();
     
     }

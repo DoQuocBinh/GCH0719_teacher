@@ -17,6 +17,17 @@ app.get('/',function(req,res){
     res.render('index',{name:'Cuong', city :'Gia Lai'})
 })
 
+var fs = require('fs').promises;
+app.get('/all',async function(req,res){
+    try {
+        const data = await fs.readFile('database.json');
+        var products = JSON.parse(data).products;
+        res.render('allProduct',{model:products});
+    } catch (error) {
+        console.log('something is wrong; readFile');
+    }
+})
+
 var PORT = process.env.PORT || 5000;
 app.listen(PORT,function(){
     console.log('server is running at port ' + PORT);

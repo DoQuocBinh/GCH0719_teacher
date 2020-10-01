@@ -7,6 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    Hello {{name}} from {{city}}
+    <h1>All products</h1>
+    <table border="1" width="50%">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Price</td>
+        </tr>
+        {{# each model}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{name}}</td>
+            <td>{{price}}</td>
+        </tr>
+        {{/each}}
+    </table>
 </body>
 </html>

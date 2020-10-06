@@ -27,6 +27,9 @@ app.get('/all',async function(req,res){
         console.log('something is wrong; readFile');
     }
 })
+app.get('/add', function(req,res){
+    res.render('addProduct');
+})
 
 var PORT = process.env.PORT || 5000;
 app.listen(PORT,function(){

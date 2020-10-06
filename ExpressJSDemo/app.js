@@ -40,6 +40,13 @@ app.post('/doAddProduct',async function(req,res){
         let id = req.body.txtId;
         let name = req.body.txtName;
         let price = req.body.Price;
+        if(name !=null && name.length <5){
+            //Show error and return instead of inserting new product
+            res.render('addProduct',{error : {nameError:'Length must >=5'},
+                                    oldValues : {id: id,name:name,price:price}
+                                        })
+            return;
+        }
         let newProduct =   {"id": Number(id), "name": name, "price": price}
         //update memory
         products.push(newProduct);

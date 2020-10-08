@@ -27,7 +27,6 @@ app.post('/doLogin',async function(req,res){
     //get what user entered into form
     let nameInput = req.body.txtName;
     let phoneInput = req.body.txtPhone;
-    let fileContent ='';
     content= await fspromises.readFile('users.txt','utf-8');
     let usersText = content.trim().split(os.EOL);
     for(i=0;i<usersText.length;i++){

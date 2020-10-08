@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .errorText {
+            color: red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add product</h1>
+    <div class="form-group" style="margin-left: 60px;width:100%">
+            <form action="/doAddProduct" method="post">
+            <table>
+            <tr>
+                <td>Id</td>
+                <td><input class="form-control" type="text" name="txtId" value="{{oldValues.id}}"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td> 
+                    <input class="form-control" type="text" name="txtName" value="{{oldValues.name}}">
+                    <span class="errorText">{{error.nameError}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><input class="form-control" type="text" name="Price" value="{{oldValues.price}}"></td>
+            </tr>
+            <tr align="right">
+                <td colspan="2"><input class="btn btn-primary" type="submit" value="Add Product"/></td>          
+            </tr>
+        </table>    
+        </form>
+    </div>
+    
+</body>
+</html>

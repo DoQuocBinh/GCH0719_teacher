@@ -11,14 +11,14 @@
             <td>Id</td>
             <td>Name</td>
             <td>Price</td>
-            <td>Update</td>
+            <td>Delete</td>
         </tr>
         {{# each sanPham}}
         <tr>
             <td>{{_id}}</td>
             <td>{{name}}</td>
             <td>{{price}}</td>
-            <td><a href="/sanpham/edit?id={{_id}}">Update</a></td>
+            <td><a href="/delete?id={{_id}}">Delete</a></td>
         </tr>  
         {{/each}}
     </table>

@@ -24,6 +24,16 @@ app.get('/all',async function(req,res){
     res.render('allSanPham',{sanPham:results});
 })
 
+app.get('/delete',async function(req,res){
+    let id = req.query.id;
+    var ObjectID = require('mongodb').ObjectID;
+    let condition = {"_id" : ObjectID(id)};
+
+    let client= await MongoClient.connect(url);
+    let dbo = client.db("GCH0719");
+    await dbo.collection("Product").deleteOne(condition);
+    res.redirect('/all');
+})
 const PORT = process.env.PORT || 5000
 var server=app.listen(PORT,function() {
     console.log("Server is running at " + PORT);
